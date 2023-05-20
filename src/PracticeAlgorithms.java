@@ -94,6 +94,9 @@ public class PracticeAlgorithms {
     }
 
 
+    /**
+     * static method to print the formatted contents of an int array
+     * */
     public static void printIntArray(int[] theArray) {
         for (int item : theArray) {
             System.out.printf("%d ", item);
@@ -140,6 +143,7 @@ public class PracticeAlgorithms {
         return N * fact(N - 1);
     }
 
+
     /**
      * static method that calls rank to binary search for "key"
      * */
@@ -163,6 +167,7 @@ public class PracticeAlgorithms {
         else
             return rank(key, array, minIndex, maxIndex - 1);
     }
+
 
     /**
      * static method to brute force search for a "key" in an int array
