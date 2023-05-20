@@ -10,3 +10,4 @@
 6. lg()
 7. Fibonacci.Fib()
 8. Fibonnaci.FastFib()
+9. fact()
