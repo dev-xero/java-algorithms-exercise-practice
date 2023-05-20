@@ -40,6 +40,9 @@ public class PracticeAlgorithms {
         }
     }
 
+    /**
+     * static method to print the formatted contents of a two-dimensional int array
+     * */
     public static void printTwoDmIntArray(int[][] theArray) {
 
         for (int[] rows : theArray) {
