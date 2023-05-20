@@ -1,5 +1,21 @@
 import java.util.Random;
 
+/**
+ * class containing static methods to compute the fibonacci sequence sum for an integer
+ * the class contains two implementations:
+ * 1. a recursive method
+ * 2. a much faster method utilizing memoization and dynamic programming
+ * */
+class Fibonacci {
+    // recursive implementation
+    public static long Fib(int N) {
+        if (N == 0) return 0;
+        if (N == 1) return 1;
+
+        return Fib(N - 2) + Fib(N - 1);
+    }
+}
+
 public class PracticeAlgorithms {
     public static boolean isBetweenZeroAndOne(double x, double y) {
         return (0 < x && x < 1) && (0 < y && y < 1);
@@ -119,5 +135,11 @@ public class PracticeAlgorithms {
         System.out.println();
 
         System.out.println(lg(32));
+        System.out.println();
+
+        // loop utilizing the recursive fib method
+        for (int i = 0; i < 101; i++) {
+            System.out.println(Fibonacci.Fib(i));
+        }
     }
 }
