@@ -164,6 +164,19 @@ public class PracticeAlgorithms {
             return rank(key, array, minIndex, maxIndex - 1);
     }
 
+    /**
+     * static method to brute force search for a "key" in an int array
+     * */
+    public static int bruteForceSearch(int key, int[] theArray) {
+        for (int i = 0; i < theArray.length; i++) {
+            if (theArray[i] == key) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
 
     public static void main(String[] args) {
         Random generator = new Random();
@@ -247,5 +260,8 @@ public class PracticeAlgorithms {
         System.out.println("index: " + binarySearch(5, testIntArray));
         System.out.println();
 
+        System.out.println("- Brute Force Search: key = 3");
+        System.out.println("index: " + bruteForceSearch(3, testIntArray));
+        System.out.println();
     }
 }
