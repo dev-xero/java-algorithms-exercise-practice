@@ -16,6 +16,7 @@ class Fibonacci {
         return Fib(N - 2) + Fib(N - 1);
     }
 
+    // dynamic programming and memoization
     public static long FastFib(int N, HashMap<Integer, Long> cache) {
         if (N == 0) {
             cache.put(N, 0L);
