@@ -71,6 +71,16 @@ public class PracticeAlgorithms {
         return transposedMatrix;
     }
 
+    /**
+     * recursive method that returns the greatest integer not greater than log(N)
+     * to base two
+     * */
+    public static int lg(int N) {
+        if (N <= 1) return 0;
+
+        return 1 + lg(N / 2);
+    }
+
     public static void main(String[] args) {
         Random generator = new Random();
 
@@ -107,5 +117,7 @@ public class PracticeAlgorithms {
         System.out.println("- Transposed");
         printTwoDmIntArray(matrixTransposition(testIntMatrix));
         System.out.println();
+
+        System.out.println(lg(32));
     }
 }
