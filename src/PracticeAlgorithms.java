@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -13,6 +14,21 @@ class Fibonacci {
         if (N == 1) return 1;
 
         return Fib(N - 2) + Fib(N - 1);
+    }
+
+    public static long FastFib(int N, HashMap<Integer, Long> cache) {
+        if (N == 0) {
+            cache.put(N, 0L);
+            return 0;
+        }
+
+        if (N == 1) {
+            cache.put(N, 1L);
+            return 1;
+        }
+
+        cache.put(N, cache.get(N - 2) + cache.get(N - 1));
+        return cache.get(N);
     }
 }
 
@@ -99,6 +115,7 @@ public class PracticeAlgorithms {
 
     public static void main(String[] args) {
         Random generator = new Random();
+        HashMap<Integer, Long> cache = new HashMap<>();
 
         double testX = 0.1;
         double testY = 0.5;
@@ -137,9 +154,19 @@ public class PracticeAlgorithms {
         System.out.println(lg(32));
         System.out.println();
 
+        // loop utilizing dynamic programming and memoization
+        System.out.println("- Dynamic Programming and Memoization");
+        for (int i = 0; i <= 80; i++) {
+            System.out.println(Fibonacci.FastFib(i, cache));
+        }
+        System.out.println();
+
         // loop utilizing the recursive fib method
-        for (int i = 0; i < 101; i++) {
+        System.out.println("- Recursion");
+        for (int i = 0; i <= 80; i++) {
             System.out.println(Fibonacci.Fib(i));
         }
+        System.out.println();
+
     }
 }
