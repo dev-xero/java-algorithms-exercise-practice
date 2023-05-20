@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -131,6 +132,30 @@ public class PracticeAlgorithms {
         return N * fact(N - 1);
     }
 
+    /**
+     * static method that calls rank to binary search for "key"
+     * */
+    public static int binarySearch(int key, int[] array) {
+        Arrays.sort(array); // we need the array to be sorted
+        return rank(key, array, 0, array.length - 1);
+    }
+
+
+    /**
+     * static recursive method that implements binary search
+     * */
+    public static int rank(int key, int[] array, int minIndex, int maxIndex) {
+        if (minIndex > maxIndex) return -1;
+        int midIndex = minIndex + (maxIndex - minIndex) / 2;
+
+        if (array[midIndex] == key) return midIndex;
+
+        if (array[midIndex] < key)
+            return rank(key, array, midIndex + 1, maxIndex);
+        else
+            return rank(key, array, minIndex, maxIndex - 1);
+    }
+
 
     public static void main(String[] args) {
         Random generator = new Random();
@@ -141,6 +166,19 @@ public class PracticeAlgorithms {
 
         boolean[][] testTwoDmBooleanArray = new boolean[3][2];
         int[][] testIntMatrix = new int[3][2];
+
+        int[] testIntArray = new int[10];
+
+        testIntArray[0] = 5;
+        testIntArray[1] = 7;
+        testIntArray[2] = 6;
+        testIntArray[3] = 9;
+        testIntArray[4] = 3;
+        testIntArray[5] = 8;
+        testIntArray[6] = 2;
+        testIntArray[7] = 4;
+        testIntArray[8] = 1;
+        testIntArray[9] = 10;
 
         testTwoDmBooleanArray[0][0] = true;
         testTwoDmBooleanArray[0][1] = false;
@@ -188,6 +226,10 @@ public class PracticeAlgorithms {
          System.out.println();
 
         System.out.printf("31!: %d\n", fact(31)); // N > 31 causes overflow
+        System.out.println();
+
+        System.out.println("- Binary Search: key = 5");
+        System.out.println(binarySearch(5, testIntArray));
         System.out.println();
     }
 }
