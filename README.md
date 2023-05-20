@@ -5,3 +5,5 @@
 1. isBetweenZeroAndOne()
 2. toBinaryString()
 3. printTwoDmBooleanArray()
+4. printTwoDmIntArray()
+5. matrixTransposition()
