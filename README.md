@@ -14,3 +14,6 @@
 10. fact()
 11. binarySearch()
 12. bruteForceSearch()
+
+## Python Implementation
+I've implemented the same methods but in Python over [here](https://github.com/dev-xero/python-algorithms-exercise-practice), if you're interested.
