@@ -11,3 +11,4 @@
 7. Fibonacci.Fib()
 8. Fibonnaci.FastFib()
 9. fact()
+10. binarySearch()
