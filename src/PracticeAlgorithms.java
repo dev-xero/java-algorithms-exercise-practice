@@ -7,13 +7,13 @@ public class PracticeAlgorithms {
         StringBuilder binaryString = new StringBuilder();
         binaryString.append(binaryFormString(x, binaryString.toString()));
 
-        return binaryString.reverse().toString();
+        return binaryString.toString();
     }
 
     private static String binaryFormString(int x, String binString) {
         if (x == 1) return binString + "1";
 
-        return (x % 2) + binaryFormString(x / 2, binString);
+        return binaryFormString(x / 2, binString) + (x % 2);
     }
 
     public static void main(String[] args) {
@@ -22,6 +22,6 @@ public class PracticeAlgorithms {
 
         System.out.println(isBetweenZeroAndOne(testX, testY));
 
-        System.out.println(toBinaryString(7));
+        System.out.println(toBinaryString(8));
     }
 }
