@@ -34,6 +34,7 @@ class Fibonacci {
     }
 }
 
+
 public class PracticeAlgorithms {
     public static boolean isBetweenZeroAndOne(double x, double y) {
         return (0 < x && x < 1) && (0 < y && y < 1);
@@ -112,13 +113,22 @@ public class PracticeAlgorithms {
 
 
     /**
-     * recursive method that returns the greatest integer not greater than log(N)
+     * static recursive method that returns the greatest integer not greater than log(N)
      * to base two
      * */
     public static int lg(int N) {
         if (N <= 1) return 0;
 
         return 1 + lg(N / 2);
+    }
+
+    /**
+     * static recursive method to compute the factorial of an integer "N"
+     * */
+    public static long fact(int N) {
+        if (N == 1) return 1;
+
+        return N * fact(N - 1);
     }
 
 
@@ -165,17 +175,19 @@ public class PracticeAlgorithms {
 
         // loop utilizing dynamic programming and memoization
         System.out.println("- Dynamic Programming and Memoization");
-        for (int i = 0; i <= 80; i++) {
+        for (int i = 0; i <= 40; i++) {
             System.out.println(Fibonacci.FastFib(i, cache));
         }
         System.out.println();
 
-        // loop utilizing the recursive fib method
-        System.out.println("- Recursion");
-        for (int i = 0; i <= 80; i++) {
-            System.out.println(Fibonacci.Fib(i));
-        }
-        System.out.println();
+         // loop utilizing the recursive fib method
+         System.out.println("- Recursion");
+         for (int i = 0; i <= 40; i++) {
+         System.out.println(Fibonacci.Fib(i));
+         }
+         System.out.println();
 
+        System.out.printf("31!: %d\n", fact(31)); // N > 31 causes overflow
+        System.out.println();
     }
 }
