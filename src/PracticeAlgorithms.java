@@ -96,6 +96,13 @@ public class PracticeAlgorithms {
 
         printTwoDmBooleanArray(testTwoDmBooleanArray);
         System.out.println();
+
+        System.out.println("- Matrix");
         printTwoDmIntArray(testIntMatrix);
+        System.out.println();
+
+        System.out.println("- Transposed");
+        printTwoDmIntArray(matrixTransposition(testIntMatrix));
+        System.out.println();
     }
 }
