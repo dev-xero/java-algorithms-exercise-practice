@@ -13,3 +13,4 @@
 9. Fibonnaci.FastFib()
 10. fact()
 11. binarySearch()
+12. bruteForceSearch()
