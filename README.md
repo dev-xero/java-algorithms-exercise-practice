@@ -7,3 +7,4 @@
 3. printTwoDmBooleanArray()
 4. printTwoDmIntArray()
 5. matrixTransposition()
+6. lg()
