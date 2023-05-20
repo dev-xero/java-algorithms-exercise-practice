@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class PracticeAlgorithms {
     public static boolean isBetweenZeroAndOne(double x, double y) {
         return (0 < x && x < 1) && (0 < y && y < 1);
@@ -38,11 +40,33 @@ public class PracticeAlgorithms {
         }
     }
 
+    /**
+     * static method that returns the transposition of an input matrix
+     * */
+    public static int[][] matrixTransposition(int[][] theMatrix) {
+        int rows = theMatrix.length;
+        int cols = theMatrix[0].length;
+
+        int[][] transposedMatrix = new int[cols][rows];
+
+        for (int j = 0; j < cols; j++) {
+            for (int i = 0; i < rows; i++) {
+                transposedMatrix[j][i] = theMatrix[i][j];
+            }
+        }
+
+        return transposedMatrix;
+    }
+
     public static void main(String[] args) {
+        Random generator = new Random();
+        int i = 0;
+
         double testX = 0.1;
         double testY = 0.5;
 
         boolean[][] testTwoDmBooleanArray = new boolean[3][2];
+        int[][] testIntMatrix = new int[3][2];
 
         testTwoDmBooleanArray[0][0] = true;
         testTwoDmBooleanArray[0][1] = false;
@@ -51,10 +75,18 @@ public class PracticeAlgorithms {
         testTwoDmBooleanArray[2][0] = true;
         testTwoDmBooleanArray[2][1] = false;
 
+        for (int[] rows : testIntMatrix) {
+            for (int cols : rows) {
+                testIntMatrix[i][cols] = generator.nextInt(10);
+            }
+            i++;
+        }
+
         System.out.println(isBetweenZeroAndOne(testX, testY));
         System.out.println(toBinaryString(8));
         System.out.println();
 
         printTwoDmBooleanArray(testTwoDmBooleanArray);
+        System.out.println();
     }
 }
