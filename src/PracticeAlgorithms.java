@@ -40,6 +40,16 @@ public class PracticeAlgorithms {
         }
     }
 
+    public static void printTwoDmIntArray(int[][] theArray) {
+
+        for (int[] rows : theArray) {
+            for (int cols : rows) {
+                System.out.printf("[%d] ", cols);
+            }
+            System.out.println();
+        }
+    }
+
     /**
      * static method that returns the transposition of an input matrix
      * */
@@ -60,7 +70,6 @@ public class PracticeAlgorithms {
 
     public static void main(String[] args) {
         Random generator = new Random();
-        int i = 0;
 
         double testX = 0.1;
         double testY = 0.5;
@@ -75,11 +84,10 @@ public class PracticeAlgorithms {
         testTwoDmBooleanArray[2][0] = true;
         testTwoDmBooleanArray[2][1] = false;
 
-        for (int[] rows : testIntMatrix) {
-            for (int cols : rows) {
-                testIntMatrix[i][cols] = generator.nextInt(10);
+        for (int i = 0; i < testIntMatrix.length; i++) {
+            for (int j = 0; j < testIntMatrix[i].length; j++) {
+                testIntMatrix[i][j] = generator.nextInt(10);
             }
-            i++;
         }
 
         System.out.println(isBetweenZeroAndOne(testX, testY));
@@ -88,5 +96,6 @@ public class PracticeAlgorithms {
 
         printTwoDmBooleanArray(testTwoDmBooleanArray);
         System.out.println();
+        printTwoDmIntArray(testIntMatrix);
     }
 }
