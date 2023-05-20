@@ -16,6 +16,7 @@ class Fibonacci {
         return Fib(N - 2) + Fib(N - 1);
     }
 
+
     // dynamic programming and memoization
     public static long FastFib(int N, HashMap<Integer, Long> cache) {
         if (N == 0) {
@@ -38,6 +39,7 @@ public class PracticeAlgorithms {
         return (0 < x && x < 1) && (0 < y && y < 1);
     }
 
+
     /**
      * static method to return the binary string representation of an integer
      * */
@@ -48,6 +50,7 @@ public class PracticeAlgorithms {
         return binaryString.toString();
     }
 
+
     /**
      * static recursive method that "builds" the binary string
      * */
@@ -56,6 +59,7 @@ public class PracticeAlgorithms {
 
         return binaryFormString(x / 2, binString) + (x % 2);
     }
+
 
     /**
     * static method to print a "*" or " " depending on the contents in a two-dimensional array
@@ -73,6 +77,7 @@ public class PracticeAlgorithms {
         }
     }
 
+
     /**
      * static method to print the formatted contents of a two-dimensional int array
      * */
@@ -85,6 +90,7 @@ public class PracticeAlgorithms {
             System.out.println();
         }
     }
+
 
     /**
      * static method that returns the transposition of an input matrix
@@ -104,6 +110,7 @@ public class PracticeAlgorithms {
         return transposedMatrix;
     }
 
+
     /**
      * recursive method that returns the greatest integer not greater than log(N)
      * to base two
@@ -113,6 +120,7 @@ public class PracticeAlgorithms {
 
         return 1 + lg(N / 2);
     }
+
 
     public static void main(String[] args) {
         Random generator = new Random();
