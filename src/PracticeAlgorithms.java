@@ -16,12 +16,36 @@ public class PracticeAlgorithms {
         return binaryFormString(x / 2, binString) + (x % 2);
     }
 
+    public static void printTwoDmBooleanArray(boolean[][] theArray) {
+        for (boolean[] row : theArray) {
+            for (boolean column : row) {
+                if (column) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         double testX = 0.1;
         double testY = 0.5;
 
-        System.out.println(isBetweenZeroAndOne(testX, testY));
+        boolean[][] testTwoDmBooleanArray = new boolean[3][2];
 
+        testTwoDmBooleanArray[0][0] = true;
+        testTwoDmBooleanArray[0][1] = false;
+        testTwoDmBooleanArray[1][0] = false;
+        testTwoDmBooleanArray[1][1] = true;
+        testTwoDmBooleanArray[2][0] = true;
+        testTwoDmBooleanArray[2][1] = false;
+
+        System.out.println(isBetweenZeroAndOne(testX, testY));
         System.out.println(toBinaryString(8));
+        System.out.println();
+
+        printTwoDmBooleanArray(testTwoDmBooleanArray);
     }
 }
