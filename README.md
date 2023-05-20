@@ -4,3 +4,4 @@
 ## Algorithms Implemented
 1. isBetweenZeroAndOne()
 2. toBinaryString()
+3. printTwoDmBooleanArray()
