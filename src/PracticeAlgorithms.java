@@ -94,6 +94,14 @@ public class PracticeAlgorithms {
     }
 
 
+    public static void printIntArray(int[] theArray) {
+        for (int item : theArray) {
+            System.out.printf("%d ", item);
+        }
+        System.out.println();
+    }
+
+
     /**
      * static method that returns the transposition of an input matrix
      * */
@@ -144,7 +152,7 @@ public class PracticeAlgorithms {
     /**
      * static recursive method that implements binary search
      * */
-    public static int rank(int key, int[] array, int minIndex, int maxIndex) {
+    private static int rank(int key, int[] array, int minIndex, int maxIndex) {
         if (minIndex > maxIndex) return -1;
         int midIndex = minIndex + (maxIndex - minIndex) / 2;
 
@@ -179,6 +187,9 @@ public class PracticeAlgorithms {
         testIntArray[7] = 4;
         testIntArray[8] = 1;
         testIntArray[9] = 10;
+
+        int[] sortedTestIntArray = Arrays.copyOf(testIntArray, testIntArray.length);
+        Arrays.sort(sortedTestIntArray);
 
         testTwoDmBooleanArray[0][0] = true;
         testTwoDmBooleanArray[0][1] = false;
@@ -228,8 +239,13 @@ public class PracticeAlgorithms {
         System.out.printf("31!: %d\n", fact(31)); // N > 31 causes overflow
         System.out.println();
 
-        System.out.println("- Binary Search: key = 5");
-        System.out.println(binarySearch(5, testIntArray));
+        System.out.println("- The Sorted Array");
+        printIntArray(sortedTestIntArray);
         System.out.println();
+
+        System.out.println("- Binary Search: key = 5");
+        System.out.println("index: " + binarySearch(5, testIntArray));
+        System.out.println();
+
     }
 }
